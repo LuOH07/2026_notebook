@@ -26,9 +26,9 @@ def serve():
 def home():
     return render_template('pages/home.html')
 
-@app.route('/<page>/')
+@app.route('/<page>')
 def pages(page):
-    return render_template(str(Path('pages')) + '/' + 'home.html')
+    return render_template(str(Path('pages')) + '/' + page.lower() + '.html')
 
 # Main Function, Runs at http://0.0.0.0:8080
 if __name__ == "__main__":
