@@ -37,8 +37,8 @@
                 <a href="#" class="nav-link">DRYLAB</a>
                 <div class="dropdown-menu">
                     <a href="{{ url_for('pages', page='model') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "model" %} aria-current="page"{% endif %}>Model</a>
-                    <a href="{{ url_for('pages', page='sop') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "sop" %} aria-current="page"{% endif %}>SOP</a>
-                    <a href="{{ url_for('pages', page='lca') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "lca" %} aria-current="page"{% endif %}>LCA</a>
+                    <!-- <a href="{{ url_for('pages', page='sop') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "sop" %} aria-current="page"{% endif %}>SOP</a> -->
+                    <!-- <a href="{{ url_for('pages', page='lca') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "lca" %} aria-current="page"{% endif %}>LCA</a> -->
                 </div>
             </div>
 
