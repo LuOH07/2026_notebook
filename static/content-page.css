@@ -1,0 +1,16 @@
+/* Shared starting point for pages awaiting content. */
+.content-page {
+  min-height: 70vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 24px 80px;
+  color: #0a1c37;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+.content-page h1 {
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+}

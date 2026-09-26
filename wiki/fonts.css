@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Kaisei Tokumin';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url({{ asset_url('fonts/23ba634c285470cc9408.ttf') }}) format('truetype');
+}
+
+@font-face {
+  font-family: 'Kite One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url({{ asset_url('fonts/a229cf68e4c713e96e77.ttf') }}) format('truetype');
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url({{ asset_url('fonts/c12cdadcd7cd25d69c48.ttf') }}) format('truetype');
+}
+@font-face {
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url({{ asset_url('fonts/38f8abefb8f859c48db2.ttf') }}) format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url({{ asset_url('fonts/a699af1dea30b799318e.ttf') }}) format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url({{ asset_url('fonts/87e867b52640b3b397a9.ttf') }}) format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url({{ asset_url('fonts/6f49e1b28bce7339f484.ttf') }}) format('truetype');
+}

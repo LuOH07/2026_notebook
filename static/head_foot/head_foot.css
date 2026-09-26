@@ -1,0 +1,283 @@
+/* 全站共用的基础样式、导航与页脚。 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; min-height: 100%; }
+body { background-color: #f3f7f8; }
+.dropdown-item[aria-disabled="true"] { cursor: default; }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #0A1C37;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  margin-left: 8vw;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-right: 15vw;
+}
+
+.nav-item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+nav a.nav-link {
+  font-family: 'DM Mono', monospace;
+  font-weight: 300;
+  color: #8c9fae;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  height: 100%;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+nav a.nav-link:hover,
+nav a.nav-link.active,
+.nav-item:hover > a.nav-link {
+  color: #ffffff;
+  background-color: #132D55;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  min-width: 170px;
+  background-color: #C7D8E9;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  z-index: 110;
+}
+
+.nav-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 18px;
+  color: #162741;
+  text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 1.35;
+  letter-spacing: 0px;
+  text-transform: capitalize;
+  background-color: #C7D8E9;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #132D55;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #E2EBF4;
+  color: #0b1c36;
+}
+
+.dropdown-item:hover::before {
+  opacity: 1;
+}
+
+footer {
+  background-color: #0A1B37;
+  padding: 30px 6% 35px 6%;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 40;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logos-container {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.footer-logo {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-middle-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 25px;
+}
+
+.footer-address {
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0.3px;
+  text-transform: none;
+}
+
+.footer-address p {
+  margin: 0;
+}
+
+.footer-social-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.social-icon-placeholder {
+  width: 44px;
+  height: 44px;
+  background-color: #BDD0E3;
+  border: 1px solid #92AFD6;
+  color: #4275B3;
+  fill: #4275B3;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.social-icon-placeholder:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.social-icon-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.footer-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.footer-copyright {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.6px;
+  text-transform: capitalize;
+  display: flex;
+  gap: 35px;
+}
+
+.footer-contact-btn {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #4C6E8F;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 10px 32px;
+  border-radius: 22px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-contact-btn:hover {
+  background-color: #132437;
+  transform: translateY(-1px);
+}
+
+footer {
+  position: relative !important;
+  z-index: 40 !important;
+  clear: both;
+}
+
+.wiki-legal {
+  max-width: 1200px;
+  margin: 24px auto 0;
+  padding: 0 24px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.wiki-legal p {
+  margin: 4px 0;
+}
+
+.wiki-legal a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.nav-item:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%);
+}
+

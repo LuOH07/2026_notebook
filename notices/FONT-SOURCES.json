@@ -1,0 +1,22 @@
+{
+  "stylesheets": [
+    "https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@800&display=swap",
+    "https://fonts.googleapis.com/css2?family=Kite+One&display=swap",
+    "https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Inter:wght@400;600;700&display=swap"
+  ],
+  "files": {
+    "https://fonts.gstatic.com/s/dmmono/v16/aFTR7PB1QTsUX8KYvrGyIYQ.ttf": "fonts/c12cdadcd7cd25d69c48.ttf",
+    "https://fonts.gstatic.com/s/dmmono/v16/aFTU7PB1QTsUX8KYhh0.ttf": "fonts/38f8abefb8f859c48db2.ttf",
+    "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf": "fonts/6f49e1b28bce7339f484.ttf",
+    "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf": "fonts/87e867b52640b3b397a9.ttf",
+    "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf": "fonts/a699af1dea30b799318e.ttf",
+    "https://fonts.gstatic.com/s/kaiseitokumin/v11/Gg8vN5wdZg7xCwuMsylww2ZiQnr_-nkh.ttf": "fonts/23ba634c285470cc9408.ttf",
+    "https://fonts.gstatic.com/s/kiteone/v23/70lQu7shLnA_E02vyq1b.ttf": "fonts/a229cf68e4c713e96e77.ttf"
+  },
+  "licenses": {
+    "kaiseitokumin": "https://raw.githubusercontent.com/google/fonts/main/ofl/kaiseitokumin/OFL.txt",
+    "kiteone": "https://raw.githubusercontent.com/google/fonts/main/ofl/kiteone/OFL.txt",
+    "dmmono": "https://raw.githubusercontent.com/google/fonts/main/ofl/dmmono/OFL.txt",
+    "inter": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt"
+  }
+}

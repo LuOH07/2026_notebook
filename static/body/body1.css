@@ -1,0 +1,1443 @@
+/* 地图背景、卡片与装饰图层的位置；顺序保持原样。 */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.map-container {
+  position: relative !important;
+  width: 100% !important;
+  z-index: 2 !important;
+  clear: both;
+  background-color: #f3f7f8 !important;
+  margin-top: -50px !important;
+}
+
+.map-underlay {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sting-overlay {
+  position: absolute;
+  top: 5.4%;
+  right: 5%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 18%;
+  max-width: 480px;
+  min-width: 100px;
+  height: auto;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 9%;
+  right: 0%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 100%;
+  height: auto;
+}
+
+.members-title-overlay {
+  position: absolute;
+  top: 21%;
+  right: 35.5%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 23%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.members-card-overlay-1 {
+  position: absolute;
+  top: 24.2%;
+  left: 5%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 19%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.members-card-overlay-1 .members-card-bg1 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-1 .CAI_Chenlin {
+  position: absolute;
+  top: 19%;
+  left: 17%;
+  width: 60%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-1 .CAI_Chenlin-text {
+  position: absolute;
+  bottom: 18%;
+  left: 18%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(-4.138deg);
+  z-index: 2;
+}
+
+.members-card-overlay-2 {
+  position: absolute;
+  top: 23.7%;
+  left: 50%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 18%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(-6deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-2 .members-card-bg2 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-2 .CHEN_Zaiyang {
+  position: absolute;
+  top: 17%;
+  left: 17%;
+  width: 62%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-2 .CHEN_Zaiyang-text {
+  position: absolute;
+  bottom: 19%;
+  left: 12%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(1deg);
+  z-index: 2;
+}
+
+.members-card-overlay-3 {
+  position: absolute;
+  top: 25.3%;
+  right: 7%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 18%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(8deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-3 .members-card-bg3 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-3 .GAO_Mandi {
+  position: absolute;
+  top: 15%;
+  left: 17%;
+  width: 68%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-3 .GAO_Mandi-text {
+  position: absolute;
+  bottom: 19%;
+  left: 12%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+.members-card-overlay-4 {
+  position: absolute;
+  top: 27.2%;
+  left: 27%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 18%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(2deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-4 .members-card-bg4 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-4 .GUO_Junhong {
+  position: absolute;
+  top: 13%;
+  left: 14%;
+  width: 70%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-4 .GUO_Junhong-text {
+  position: absolute;
+  bottom: 19%;
+  left: 12%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+.members-card-overlay-5 {
+  position: absolute;
+  top: 29.3%;
+  right: 27%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 18%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(-4deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-5 .members-card-bg5 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-5 .LU_Yuzhi {
+  position: absolute;
+  top: 16%;
+  left: 16%;
+  width: 73%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-5 .LU_Yuzhi-text {
+  position: absolute;
+  bottom: 19%;
+  left: 12%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+.members-card-overlay-6 {
+  position: absolute;
+  top: 31%;
+  right: 4%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 19%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(6deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-6 .members-card-bg6 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-6 .LI_Wenyu {
+  position: absolute;
+  top: 22%;
+  left: 25%;
+  width: 48%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-6 .LI_Wenyu-text {
+  position: absolute;
+  bottom: 18%;
+  left: 18%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(-4.138deg);
+  z-index: 2;
+}
+
+.members-card-overlay-7 {
+  position: absolute;
+  top: 30.8%;
+  left: 4%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 18%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(4deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-7 .members-card-bg7 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-7 .LIN_Zhijun {
+  position: absolute;
+  top: 17%;
+  left: 16%;
+  width: 65%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-7 .LIN_Zhijun-text {
+  position: absolute;
+  bottom: 19%;
+  left: 12%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+.members-card-overlay-8 {
+  position: absolute;
+  top: 32%;
+  left: 29%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 19%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(-4deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-8 .members-card-bg8 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-8 .LI_Wanxin {
+  position: absolute;
+  top: 10%;
+  left: 13%;
+  width: 70%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-8 .LI_Wanxin-text {
+  position: absolute;
+  bottom: 18%;
+  left: 18%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(-4.138deg);
+  z-index: 2;
+}
+
+.members-card-overlay-9 {
+  position: absolute;
+  top: 35.3%;
+  right: 29.5%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 18%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(4deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-9 .members-card-bg9 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-9 .REN_Moye {
+  position: absolute;
+  top: 17%;
+  left: 17%;
+  width: 60%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-9 .REN_Moye-text {
+  position: absolute;
+  bottom: 19%;
+  left: 12%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+.members-card-overlay-10 {
+  position: absolute;
+  top: 36%;
+  left: 8%;
+  z-index: 3;
+  pointer-events: auto;
+  width: 19%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(0deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-10 .members-card-bg10 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-10 .WANG_Kexin {
+  position: absolute;
+  top: 17%;
+  left: 17%;
+  width: 65%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-10 .WANG_Kexin-text {
+  position: absolute;
+  bottom: 18%;
+  left: 18%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(-4.138deg);
+  z-index: 2;
+}
+
+.members-card-overlay-11 {
+  position: absolute;
+  top: 41.9%;
+  left: 12%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 18%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(-4deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-11 .members-card-bg11 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-11 .WANG_Guanzhe {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 68%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-11 .WANG_Guanzhe-text {
+  position: absolute;
+  bottom: 19%;
+  left: 12%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+.members-card-overlay-12 {
+  position: absolute;
+  top: 42.3%;
+  left: 42.7%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 19%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(8deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-12 .members-card-bg12 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-12 .WANG_Qingyu {
+  position: absolute;
+  top: 15%;
+  left: 13%;
+  width: 70%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  transform: rotate(-8deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-12 .WANG_Qingyu-text {
+  position: absolute;
+  bottom: 18%;
+  left: 18%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(-4.138deg);
+  z-index: 2;
+}
+
+.members-card-overlay-13 {
+  position: absolute;
+  top: 37.5%;
+  left: 32%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 18%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(4deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-13 .members-card-bg13 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-13 .ZHANG_Ke {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 68%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-13 .ZHANG_Ke-text {
+  position: absolute;
+  bottom: 19%;
+  left: 12%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+.members-card-overlay-14 {
+  position: absolute;
+  top: 37.5%;
+  right: 9%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 18%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(6deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-14 .members-card-bg14 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-14 .ZHANG_Jingxuan {
+  position: absolute;
+  top: 10%;
+  left: 11%;
+  width: 75%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-14 .ZHANG_Jingxuan-text {
+  position: absolute;
+  bottom: 19%;
+  left: 12%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+.members-card-overlay-15 {
+  position: absolute;
+  top: 42.2%;
+  right: 10%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 18%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(4deg);
+  transform-origin: center center;
+}
+
+.members-card-overlay-15 .members-card-bg15 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.members-card-overlay-15 .ZHANG_Xiwen {
+  position: absolute;
+  top: 19%;
+  left: 19%;
+  width: 60%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.members-card-overlay-15 .ZHANG_Xiwen-text {
+  position: absolute;
+  bottom: 19%;
+  left: 12%;
+  color: #243A4F;
+  font-family: "Kaisei Tokumin";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.364px;
+  width: 60.884px;
+  height: 29.342px;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+.studentleaders-title-overlay {
+  position: absolute;
+  top: 49.7%;
+  right: 32.5%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 34%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.ZHENG_Keshuo-overlay {
+  position: absolute;
+  top: 51.9%;
+  left: 23%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 16%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.LI_Meihan-overlay {
+  position: absolute;
+  top: 52%;
+  left: 42%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 16%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.QU_Jiayue-overlay {
+  position: absolute;
+  top: 51.9%;
+  left: 62%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 16%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.advisors-title-overlay {
+  position: absolute;
+  top: 59%;
+  right: 38%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 23%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.Ettrium_Han-overlay {
+  position: absolute;
+  top: 60.8%;
+  left: 19%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.CHEN_Yanhao-overlay {
+  position: absolute;
+  top: 59.8%;
+  left: 40%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 20%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.LIAO_Yijie-overlay {
+  position: absolute;
+  top: 61.2%;
+  left: 65%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 13%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.PENG_Jiaxuan-overlay {
+  position: absolute;
+  top: 65.9%;
+  left: 18.8%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.SHEN_Ruichen-overlay {
+  position: absolute;
+  top: 65.9%;
+  left: 42.5%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.LIN_Nanqin-overlay {
+  position: absolute;
+  top: 65.7%;
+  left: 65%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.Enduo_Kim-overlay {
+  position: absolute;
+  top: 71%;
+  left: 20%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.GUO_Yanlinxing-overlay {
+  position: absolute;
+  top: 70.9%;
+  left: 42%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.TANG_Ziyan-overlay {
+  position: absolute;
+  top: 70.7%;
+  left: 64%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 16%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.instructors-title-overlay {
+  position: absolute;
+  top: 77.5%;
+  right: 36.5%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 25%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.YANG_Nan-overlay {
+  position: absolute;
+  top: 79.7%;
+  left: 43.5%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.PIs-title-overlay {
+  position: absolute;
+  top: 86%;
+  right: 26%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 48%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.HONG_Wenjing-overlay {
+  position: absolute;
+  top: 88.5%;
+  left: 30%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.ZHANG_Aihui-overlay {
+  position: absolute;
+  top: 88.6%;
+  left: 53%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.LING_Chen-overlay {
+  position: absolute;
+  top: 93.5%;
+  left: 20%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.CHEN_Junhong-overlay {
+  position: absolute;
+  top: 93.6%;
+  left: 42%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.HUANG_Jiacheng-overlay {
+  position: absolute;
+  top: 93.5%;
+  left: 64%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+}
+
+.tape1-overlay {
+  position: absolute;
+  top: 26.2%;
+  left: 19%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 19%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  opacity: 0.8;
+  transform: rotate(-58deg);
+  transform-origin: center center;
+}
+
+.tape2-overlay {
+  position: absolute;
+  top: 26.7%;
+  right: 17%;
+  z-index: 1;
+  pointer-events: auto;
+  width: 21%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  opacity: 0.8;
+  transform: rotate(0deg);
+}
+
+.tape3-overlay {
+  position: absolute;
+  top: 31.5%;
+  right: 42%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 15%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  opacity: 0.8;
+  transform: rotate(0deg);
+  transform-origin: center center;
+  white-space: normal;
+}
+
+.tape4-overlay {
+  position: absolute;
+  top: 34.4%;
+  right: 22%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 13%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  opacity: 0.8;
+  transform: rotate(-40deg);
+  transform-origin: center center;
+}
+
+.tape5-overlay {
+  position: absolute;
+  top: 41.5%;
+  left: 5.2%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 11%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  opacity: 0.8;
+  transform: rotate(-60deg);
+  transform-origin: center center;
+}
+
+.tape6-overlay {
+  position: absolute;
+  top: 42.5%;
+  left: 55%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 13%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  opacity: 0.8;
+  transform: rotate(45deg);
+  transform-origin: center center;
+}
+
+.pin1-overlay {
+  position: absolute;
+  top: 40.75%;
+  right: 24.1%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 25%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(-17deg);
+  transform-origin: center center;
+}
+
+.pin2-overlay {
+  position: absolute;
+  top: 39.5%;
+  left: 4.5%;
+  z-index: 2;
+  pointer-events: auto;
+  width: 25%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(67deg);
+  transform-origin: center center;
+}
+
+.line1-overlay {
+  position: absolute;
+  top: 24.3%;
+  left: 20%;
+  z-index: 1;
+  pointer-events: auto;
+  width: 33%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(0deg);
+  transform-origin: center center;
+}
+
+.line2-overlay {
+  position: absolute;
+  top: 31%;
+  left: 10%;
+  z-index: 1;
+  pointer-events: auto;
+  width: 33%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(-25deg);
+  transform-origin: center center;
+}
+
+.line3-overlay {
+  position: absolute;
+  top: 33.4%;
+  left: 35%;
+  z-index: 1;
+  pointer-events: auto;
+  width: 33%;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  transform: rotate(40deg);
+  transform-origin: center center;
+}
+
+.title1-text-overlay {
+  position: absolute;
+  top: 4.6%;
+  left: 6%;
+  z-index: 2;
+  color: #354453;
+  font-family: "Kaisei Tokumin";
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 54.66px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+}
+
+.title2-text-overlay {
+  position: absolute;
+  top: 5.8%;
+  left: 6%;
+  z-index: 2;
+  color: rgba(60, 69, 77, 0.68);
+  font-family: Inter;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 22.1px;
+  pointer-events: auto;
+}
+
+.title3-text-overlay {
+  position: absolute;
+  top: 6.6%;
+  left: 6%;
+  z-index: 2;
+  color: #323B43;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 50px;
+  width: 335px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.video-text-overlay {
+  position: absolute;
+  top: 10.5%;
+  left: 14%;
+  z-index: 2;
+  color: #354453;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Kaisei Tokumin";
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 74px;
+  letter-spacing: -1.04px;
+  transform: rotate(-12.415deg);
+  pointer-events: auto;
+  white-space: pre-line;
+}
+
+.archive1-text-overlay {
+  position: absolute;
+  top: 20.3%;
+  left: 48%;
+  z-index: 2;
+  color: #206E63;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Kite One", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 74px;
+  letter-spacing: -1.04px;
+  pointer-events: auto;
+  white-space: pre-line;
+}
+
+.archive2-text-overlay {
+  position: absolute;
+  top: 48.8%;
+  left: 45%;
+  z-index: 2;
+  color: #206E63;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Kite One", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 74px;
+  letter-spacing: -1.04px;
+  pointer-events: auto;
+  white-space: pre-line;
+}
+
+.archive3-text-overlay {
+  position: absolute;
+  top: 58.1%;
+  left: 45%;
+  z-index: 2;
+  color: #206E63;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Kite One", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 74px;
+  letter-spacing: -1.04px;
+  pointer-events: auto;
+  white-space: pre-line;
+}
+
+.archive4-text-overlay {
+  position: absolute;
+  top: 76.6%;
+  left: 45.5%;
+  z-index: 2;
+  color: #206E63;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Kite One", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 74px;
+  letter-spacing: -1.04px;
+  pointer-events: auto;
+  white-space: pre-line;
+}
+
+.archive5-text-overlay {
+  position: absolute;
+  top: 85.1%;
+  left: 44%;
+  z-index: 2;
+  color: #206E63;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Kite One", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 74px;
+  letter-spacing: -1.04px;
+  pointer-events: auto;
+  white-space: pre-line;
+}
+
+.members-text-overlay {
+  position: absolute;
+  top: 21.4%;
+  left: 44.5%;
+  z-index: 2;
+  color: #354453;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Kaisei Tokumin";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 74px;
+  letter-spacing: -1.04px;
+  pointer-events: auto;
+  white-space: pre-line;
+}
+
+.student_leader-text-overlay {
+  position: absolute;
+  top: 50.2%;
+  left: 36.5%;
+  z-index: 2;
+  color: #354453;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Kaisei Tokumin";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 74px;
+  letter-spacing: -1.04px;
+  pointer-events: auto;
+  white-space: pre-line;
+}
+
+.advisors-text-overlay {
+  position: absolute;
+  top: 59.4%;
+  left: 42.5%;
+  z-index: 2;
+  color: #354453;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Kaisei Tokumin";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 74px;
+  letter-spacing: -1.04px;
+  pointer-events: auto;
+  white-space: pre-line;
+}
+
+.instructors-text-overlay {
+  position: absolute;
+  top: 77.8%;
+  left: 41%;
+  z-index: 2;
+  color: #354453;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Kaisei Tokumin";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 74px;
+  letter-spacing: -1.04px;
+  pointer-events: auto;
+  white-space: pre-line;
+}
+
+.pis-text-overlay {
+  position: absolute;
+  top: 86.4%;
+  left: 29.5%;
+  z-index: 2;
+  color: #354453;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Kaisei Tokumin";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 74px;
+  letter-spacing: -1.04px;
+  pointer-events: auto;
+  white-space: pre-line;
+}
+
+.grid-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  pointer-events: none;
+}
+
+#gridCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

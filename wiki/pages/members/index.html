@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}Members{% endblock %}
+{% block page_styles %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='members/title/title.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='body/body1.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='body/body2.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='members/page.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='members/member-hover.css') }}">
+{% endblock %}
+{% block page_content %}
+  {% include 'pages/members/hero.html' %}
+  {% include 'pages/members/map.html' %}
+{% endblock %}
+{% block page_scripts %}
+  <script type="application/json" id="member-mottos">{{ member_mottos | tojson }}</script>
+  <script type="application/json" id="wiki-assets">{{ asset_config() | tojson }}</script>
+  <script src="{{ url_for('static', filename='asset-resolver.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='members/title/title.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='members/sticky-note-hover.js') }}" defer></script>
+{% endblock %}

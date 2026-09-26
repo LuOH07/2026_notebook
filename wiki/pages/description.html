@@ -1,65 +1,128 @@
 {% extends "layout.html" %}
-  
-{% block title %}Project Description{% endblock %}
-{% block lead %}Describe how and why you chose your iGEM project.{% endblock %}
+
+{% block title %}Description{% endblock %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='description/description.css') }}">
+{% endblock %}
 
 {% block page_content %}
+<header class="title-header-wrapper" id="heroWrapper">
+    <div class="grid-container" id="heroGridContainer">
+        <canvas id="gridCanvas"></canvas>
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Bronze Medal Criterion #1: Wiki</h4>
-      <p>Describe how and why you chose your iGEM project.</p>
-      <hr />
-      <p>Visit the <a href="https://competition.igem.org/judging/awards/medals">Medals page</a> for more information.</p>
+        <!-- 左侧装饰 DNA (通过 asset-map.json 解析) -->
+        <div class="left-dna-wrapper">
+            <img src="{{ asset_url('title/DNA_1.png') }}" alt="DNA Structure Left" class="left-dna-image">
+        </div>
+
+        <!-- 右侧装饰蛋白结构 -->
+        <div class="right-protein-wrapper">
+            <img src="{{ asset_url('title/protein.png') }}" alt="Protein Structure Right" class="right-protein-image">
+        </div>
+
+        <!-- 右下装饰 DNA -->
+        <div class="bottom-right-dna-wrapper">
+            <img src="{{ asset_url('title/DNA_2.png') }}" alt="DNA Structure Bottom Right" class="bottom-right-dna-image">
+        </div>
+
+        <!-- 中央大标题图片 -->
+        <div class="center-image-wrapper">
+            <img src="https://static.igem.wiki/teams/6059/wiki/description/description.avif" alt="Description" class="title-image">
+        </div>
+
+        <!-- 中央引言文案 -->
+        <div class="center-description-wrapper">
+            <p class="center-description-text">
+                We are an international team of students, researchers,<br>
+                and innovators exploring the frontiers of bacterial<br>
+                genome engineering through the power of STING.
+            </p>
+        </div>
+
+        <!-- 底部滑动探索指引 -->
+        <div class="scroll-explore-wrapper">
+            <span class="scroll-line"></span>
+            <span class="scroll-text">SCROLL TO EXPLORE</span>
+            <span class="scroll-line"></span>
+        </div>
+
+        <div class="bottom-dots-decor"></div>
     </div>
-  </div>
-</div>
+</header>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>What Should this Page Contain?</h2>
-    <hr />
-    <ul>
-      <li>Explain the problem your project addresses and its potential impact.</li>
-      <li>Provide a clear and concise summary of your project's goals and objectives.</li>
-      <li>Detail the specific reasons why your team chose this project.</li>
-      <li>Explain the inspiration behind your project, including any prior research or real-world problems that motivated your team.</li>
-      <li>Use illustrations, diagrams, and other visual aids to enhance understanding.</li>
-      <li>Include relevant scientific background, technical details, and experimental approaches.</li>
-    </ul>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr />
-    <ul>
-      <li><a href="https://2025.igem.wiki/heidelberg/description">2025 Heidelberg</a></li>
-      <li><a href="https://2025.igem.wiki/mcgill/description">2025 McGill</a></li>
-      <li><a href="https://2025.igem.wiki/izju-china/description">2025 IZJU-China</a></li>
-      <li><a href="https://2025.igem.wiki/greatbay-scie/description">2025 GreatBay-SCIE</a></li>
-      <li><a href="https://2024.igem.wiki/marburg/description">2024 Marburg</a></li>
-      <li><a href="https://2024.igem.wiki/epfl/description">2024 EPFL</a></li>
-    </ul>
-  </div>
-</div>
+<!-- 侧边动态目录导航栏 (TOC) -->
+<aside class="side-container" id="sideContainer">
+    <nav class="toc-nav" id="tocNav" aria-label="Table of Contents"></nav>
+</aside>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Tips for Success</h2>
-    <hr />
-    <ul>
-      <li>While providing detailed information, strive for clarity and conciseness.</li>
-      <li>Use summaries and subheadings to organize your content.</li>
-      <li>Utilize visuals to enhance understanding and engagement.</li>
-      <li>Document your research process and sources thoroughly.</li>
-    </ul>
-  </div>
-  <div class="col-lg-4">
-    <h2>References</h2>
-    <hr />
-    <p>Cite all relevant research papers, scientific articles, and other sources that informed your project.</p>
-    <p>Create a dedicated "References" section at the end of the page, and use a consistent citation style.</p>
-  </div>
-</div>
+<!-- 正文主体容器 -->
+<main class="main-container" id="mainContainer">
+    <h1 class="heading-1">Inspiration</h1>
+    <p class="body-text">Genome editing technology is a core approach in synthetic biology. However, traditional CRISPR-Cas9/Cas12 systems encounter difficulties in non-model environmental microorganisms, such as pseudomonads. These difficulties include high plasmid burden, toxicity caused by heterologous protein expression, and low editing efficiency, which severely limits the feasibility of complex genetic engineering (1). Recently, TnpB, a transposon-derived miniature nuclease (~400 aa) rediscovered as the evolutionary ancestor of Cas12, has provided a new direction for the development of compact genome-editing tools due to its extremely small molecular size.</p>
+    <p class="body-text">Notably, TnpB has been proven to exhibit editing activity in mammalian cells, plants and a few bacteria, such as E. coli. However, its use has not yet been reported in non-model environmental Gram-negative bacteria, such as Pseudomonas. This is the key entry point of this project. The project aims to engineer the TAM recognition spectrum of ISHahl1 TnpB to create an efficient genome-editing toolbox for use with Pseudomonas oleovorans. Subsequently, using AlkB engineering and alk-module flux optimization as proof-of-concept applications, the project will systematically verify the practical utility of this tool in complex genome engineering of environmental microorganisms and address the bottleneck of limited medium-chain alkanes biodegradation efficiency.</p>
 
+    <h1 class="heading-1">Background</h1>
+    <h2 class="heading-2">The Evolution of Gene-Editing Technology and the Challenges in Microbial Engineering</h2>
+    <p class="body-text">The CRISPR-Cas system has completely transformed genome editing. The miniaturisation and functional diversification of effector proteins, from Cas9 to Cas12, have continuously broadened the range of applications for editing tools (1, 4). However, conventional Cas9 systems face challenges such as high plasmid burden, low editing efficiency and toxicity from heterologous protein expression in environmental microorganisms and industrial strains, including pseudomonads (5).</p>
+    <p class="body-text">In recent years, the development of ultra-compact nucleases has become an important trend. Miniature effector proteins such as Cas12f (~400-700 aa) and transposon-derived TnpB (~400 aa) have extremely small coding sequences. This substantially reduces plasmid-construction burden and host-expression pressure and provides new avenues for genome editing in Gram-negative environmental microorganisms (6).</p>
+
+    <h2 class="heading-2">TnpB: A Transposon-Derived Miniature RNA-Guided Nuclease</h2>
+    <p class="body-text">TnpB is widely distributed among the prokaryotic IS200/IS605 and IS607 insertion sequence families, and it has been shown to be the evolutionary ancestor of type V CRISPR-Cas12 effector proteins. Composed of only approximately 400 amino acid residues, TnpB nevertheless has RNA-guided, targeted DNA cleavage activity and is one of the smallest programmable RNA-guided nucleases known to date (7).</p>
+    <p class="body-text">TnpB function depends on reRNA (right-end element RNA), which is transcribed from the right-end sequence of the transposon. reRNA recognizes target DNA through complementary base pairing and assembles with the TnpB protein into a catalytically active ribonucleoprotein complex. As with the Cas12 family, TnpB's recognition of the target DNA is strictly dependent on the transposon-associated motif (TAM), which is located adjacent to the target sequence and is necessary for complex assembly and RuvC catalytic activation (6).</p>
+    <p class="body-text">In recent years, TnpB has been successfully engineered and applied to genome editing in multiple systems, including mammalian cells and plants. Its miniaturised features give it unique application potential in scenarios limited by delivery, such as adeno-associated virus (AAV) delivery (8). Studies in bacteria have established a TnpB editing system in E. coli MG1655 with an editing efficiency approaching 100%, and have systematically characterized escape mechanisms during editing (9). Archaeal TnpB has also achieved editing in bacteria such as Lactococcus. However, these studies have focused on model bacteria. The editing efficiency, TAM adaptability and scarless editing capability of TnpB in Gram-negative environmental microorganisms, such as Pseudomonas, have yet to be systematically explored.</p>
+
+    <h3 class="heading-3">Heading 3</h3>
+
+    <h1 class="heading-1">Problem</h1>
+    <h2 class="heading-2">Limitations of the TAM-Site of ISHahl1 TnpB</h2>
+    <p class="body-text">ISHahl1 TnpB is a subtype derived from the extremely halophilic and alkaliphilic purple sulfur bacterium Halorhodospira halochloris. It belongs to the IS605 group of the IS200/605 superfamily (12) and exhibits relatively high plasmid-cleavage activity in E. coli. However, its recognition of the 5′-CTAC-3′ TAM is highly stringent: even a single-nucleotide mutation in this motif can significantly reduce or even abolish TnpB binding and cleavage activity (13). This recognition preference leads to a sparse distribution of TAMs in the genome, making it difficult for TnpB to achieve comprehensive targeted editing of key genomic regions.</p>
+    <p class="body-text">Secondly, strategies for engineering TAM recognition sites cannot be transferred directly from model systems such as ISDra2. Although studies indicate that K76 in ISDra2 is a core residue for TAM recognition and that its mutation can broaden the recognition spectrum, ISHahl1 and ISDra2 differ in sequence and in WED-domain conformation. Additionally, their residue positions and side-chain environments are also not conserved. This suggests that directly applying the ISDra2 engineering strategy may not be feasible, and that functionally equivalent sites in ISHahl1 must be identified through structural alignment (14).</p>
+    <p class="body-text">No studies have yet reported the engineering of the TAM specificity of ISHahl1 TnpB. Furthermore, TAM recognition, reRNA binding, and RuvC catalytic activation are tightly linked at structural and functional levels, so random mutagenesis can easily result in a loss of activity. Therefore, engineering must employ semi-rational design based on the identification of key residues. This is the main obstacle to applying ISHahl1 to broad genome editing.</p>
+
+    <h1 class="heading-1">Project</h1>
+    <p class="body-text">This project aims to engineer the TAM recognition characteristics of ISHahl1 TnpB through a "structural prediction - semi-rational design - experimental validation" strategy. The project will construct an efficient miniature genome-editing platform suitable for Pseudomonas oleovorans, and use the engineering of the alkane hydroxylase AlkB and optimization of the AlkL-to-AlkB expression ratio as proof-of-concept applications to verify the utility of this tool in complex genome manipulation of environmental microorganisms. Specifically: </p>
+
+    <h2 class="heading-2">Expanding the TAM Recognition Spectrum of ISHahl1 TnpB</h2>
+    <p class="body-text">Based on the literature review and sequence alignment, ISHahl1 TnpB will be modeled with AlphaFold3/ESMFold and structurally aligned against the ISDra2 ternary complex (PDB 8EXA). This will identify the WED-domain region that directly contacts TAM and corresponds to functionally relevant residues in ISDra2, which will then be subjected to random mutagenesis. Subsequent positive and negative screening and sequencing will be performed based on reporter genes such as fluorescence and toxicity genes, to determine the capability of TAM expansion and the efficiency of editing. These findings will feed into a machine-learning model for iterative design.</p>
+    <p class="body-text">Furthermore, to enhance editing efficiency in the new host, promoter and RBS adaptation will be employed, which will control TnpB expression and balance activity with toxicity. In parallel, recombination systems such as λ-Red/RecET will be introduced to compensate for the relatively weak homologous-recombination repair capacity of Pseudomonas and support scarless editing. Ultimately, an efficient TnpB-based gene scarless editing system will be established in Pseudomonas oleovorans.</p>
+
+    <h1 class="heading-1">Future Prospects</h1>
+    <p class="body-text">Regarding gene editing, this project aims to establish a standardised miniature editing toolbox suitable for Gram-negative environmental microorganisms. It will do this by building on the success of the TnpB editing platform, with the goal of overcoming the limitations of CRISPR-Cas9/Cas12 systems. At the same time, the project will also provide a transferable technical paradigm for developing gene-editing toolboxes for other engineered bacteria.</p>
+    <p class="body-text">In terms of applications, the project will enhance the degradation capacity of Pseudomonas oleovorans toward C13-C16 alkanes by optimizing alkane uptake and oxidation systems. The immediate outcome of this strategy is a transferable technical solution for improving the efficiency with which hydrocarbonoclastic bacteria degrade alkanes. Its broader value lies in providing new ideas for research into increasing the biodegradation efficiency of medium-chain alkanes and shortening the bioremediation cycle for petroleum pollution.</p>
+
+    <h1 class="heading-1">Conclusion</h1>
+    <p class="body-text">This project is based on the urgent demand for microbial genome-engineering tool development. It targets the stringent TAM-recognition constraint of the transposon-derived miniature nuclease ISHahl1 TnpB and proposes to broaden its recognition spectrum through rational design guided by structural biology. The aim is to establish a scarless, efficient, low-burden miniature editing platform in Pseudomonas oleovorans. Using medium-chain substrate-spectrum expansion of the alkane hydroxylase AlkB and alk-module flux optimization as proof-of-concept applications, this project will systematically verify the precision and practical utility of this editing tool in complex genome manipulation of environmental microorganisms.</p>
+
+    <h1 class="heading-reference">Reference</h1>
+    <p class="body-text">[1] Wang, J. Y., Doudna, J. A., CRISPR technology: A decade of genome editing is only the beginning, Science 379, (2023).</p>
+    <p class="body-text">[2] https://www.itopf.org/knowledge-resources/data-statistics/oil-tanker-spill-statistics-2025/.</p>
+    <p class="body-text">[3] van Beilen, J. B., Smits, T. H., Roos, F. F.; et al., Identification of an amino acid position that determines the substrate range of integral membrane alkane hydroxylases, J Bacteriol 187, 85-91 (2005).</p>
+    <p class="body-text">[4] Cong, L., Ran, F. A., Cox, D.; et al., Multiplex genome engineering using CRISPR/Cas systems, Science 339, 819-823 (2013).</p>
+    <p class="body-text">[5] Ran, F. A., Cong, L., Yan, W. X.; et al., In vivo genome editing using Staphylococcus aureus Cas9, Nature 520, 186-191 (2015).</p>
+    <p class="body-text">[6] Karvelis, T., Druteika, G., Bigelyte, G.; et al., Transposon-associated TnpB is a programmable RNA-guided DNA endonuclease, Nature 599, 692-696 (2021).</p>
+    <p class="body-text">[7] Sasnauskas, G., Tamulaitiene, G., Druteika, G.; et al., TnpB structure reveals minimal functional core of Cas12 nuclease family, Nature 616, 384-389 (2023).</p>
+    <p class="body-text">[8] Wang, M., Sun, Z., Liu, Y.; et al., Hypercompact TnpB and truncated TnpB systems enable efficient genome editing in vitro and in vivo, Cell Discovery 10, (2024).</p>
+    <p class="body-text">[9] Tang, H., Gao, J., Wang, H.; et al., Characterization of the genome editing with miniature DNA nucleases TnpB and IscB in Escherichia coli strains, Commun Biol 8, 261 (2025).</p>
+    <p class="body-text">[10] Yoo, H. W., Kim, J., Patil, M. D.; et al., Production of 12-hydroxy dodecanoic acid methyl ester using a signal peptide sequence-optimized transporter AlkL and a novel monooxygenase, Bioresour Technol 291, 121812 (2019).</p>
+    <p class="body-text">[11] Fenibo, E. O., Selvarajan, R., Abia, A. L. K.; et al., Medium-chain alkane biodegradation and its link to some unifying attributes of alkB genes diversity, Sci Total Environ 877, 162951 (2023).</p>
+    <p class="body-text">[12] Sonbol, S., Siam, R., The association of group IIB intron with integrons in hypersaline environments, Mob DNA 12, 8 (2021).</p>
+    <p class="body-text">[13] Xiang, G., Li, Y., Sun, J.; et al., Evolutionary mining and functional characterization of TnpB nucleases identify efficient miniature genome editors, Nat Biotechnol 42, 745-757 (2024).</p>
+    <p class="body-text">[14] Marquart, K. F., Mathis, N., Mollaysa, A.; et al., Effective genome editing with an enhanced ISDra2 TnpB system and deep learning-predicted omegaRNAs, Nat Methods 21, 2084-2093 (2024).</p>
+    <p class="body-text">[15] Chen, W., Zhang, Y., Zhang, Y.; et al., CRISPR/Cas9-based Genome Editing in Pseudomonas aeruginosa and Cytidine Deaminase-Mediated Base Editing in Pseudomonas Species, iScience 6, 222-231 (2018).</p>
+    <p class="body-text">[16] Sun, J., Lu, L. B., Liang, T. X.; et al., CRISPR-Assisted Multiplex Base Editing System in Pseudomonas putida KT2440, Front Bioeng Biotechnol 8, 905 (2020).</p>
+    <p class="body-text">[17] Grant, C., Deszcz, D., Wei, Y. C.; et al., Identification and use of an alkane transporter plug-in for applications in biocatalysis and whole-cell biosensing of alkanes, Sci Rep 4, 5844 (2014).</p>
+    <p class="body-text">[18] Rojo, F., Specificity at the end of the tunnel: understanding substrate length discrimination by the AlkB alkane hydroxylase, J Bacteriol 187, 19-22 (2005).</p>
+    <p class="body-text">[19] Guo, X., Zhang, J., Han, L.; et al., Structure and mechanism of the alkane-oxidizing enzyme AlkB, Nat Commun 14, 2180 (2023).</p>
+    <p class="body-text">[20] Kamada, K., Hanaoka, F., Burley, S. K., Crystal Structure of the MazE/MazF Complex: Molecular Bases of Antidote-Toxin Recognition, (2003).</p>
+    <p class="body-text">[21] Gawin, A., Valla, S., Brautaset, T., The XylS/Pm regulator/promoter system and its use in fundamental studies of bacterial gene expression, recombinant protein production and metabolic engineering, Microb Biotechnol 10, 702-718 (2017).</p>
+</main>
+
+<img src="https://static.igem.wiki/teams/6059/wiki/description/sword.avif" alt="Sword Scroll Track" class="scroll-sword" id="scrollSword">
+<img src="https://static.igem.wiki/teams/6059/wiki/description/scabbard.avif" alt="Scabbard Scroll Thumb" class="scroll-scabbard" id="scrollScabbard">
+<div class="scroll-back-to-top" id="scrollBackToTop">BACK TO TOP</div>
+{% endblock %}
+
+{% block page_scripts %}
+<script src="{{ url_for('static', filename='description/description.js') }}" defer></script>
 {% endblock %}

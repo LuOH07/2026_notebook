@@ -1,0 +1,161 @@
+/* 鼠标悬停与键盘聚焦共用的卡片显示状态。 */
+[data-sting-portrait] > img.sting-member-hover-paper{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:0;
+  visibility:hidden
+}
+
+[data-sting-arrow="ready"]:is(:hover, :focus-visible) > img.sting-member-original-paper{
+  visibility:hidden
+}
+
+[data-sting-arrow="ready"]:is(:hover, :focus-visible) > img.sting-member-hover-paper{
+  visibility:visible
+}
+
+[data-sting-portrait] > img.sting-member-hover-photo{
+  position:absolute;
+  top:10%;
+  left:12%;
+  width:76%;
+  height:58%;
+  max-width:82%;
+  max-height:78%;
+  object-fit:contain;
+  object-position:center;
+  opacity:0;
+  pointer-events:none;
+  z-index:1;
+  transition:opacity 200ms cubic-bezier(.23,1,.32,1)
+}
+
+[data-sting-portrait] > .sting-member-hover-motto{
+  position:absolute;
+  left:9%;
+  width:82%;
+  margin:0;
+  padding:0;
+  color:#5B6873;
+  text-align:center;
+  font-family:Inter;
+  font-size:20px;
+  font-style:normal;
+  font-weight:300;
+  line-height:24px;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  z-index:2;
+  transition:opacity 200ms cubic-bezier(.23,1,.32,1)
+}
+
+[data-sting-portrait="ready"]:is(:hover, :focus-visible) > .sting-member-original-name{
+  opacity:0;
+  visibility:hidden
+}
+
+[data-sting-portrait="ready"]:is(:hover, :focus-visible) > .sting-member-hover-motto{
+  opacity:1;
+  visibility:visible
+}
+
+[data-sting-portrait="ready"] > img.sting-member-original-photo{
+  transition:opacity 140ms cubic-bezier(.23,1,.32,1)
+}
+
+[data-sting-portrait="ready"]:is(:hover, :focus-visible) > img.sting-member-original-photo{
+  opacity:0
+}
+
+[data-sting-portrait="ready"]:is(:hover, :focus-visible) > img.sting-member-hover-photo{
+  opacity:1
+}
+
+@media(prefers-reduced-motion:reduce){
+  [data-sting-portrait] > .sting-member-hover-motto,[data-sting-portrait] > img.sting-member-hover-photo,[data-sting-portrait="ready"] > img.sting-member-original-photo{
+    transition:none
+  }
+
+}
+
+/* 每位成员的 hover 介绍旋转角度：正数顺时针，负数逆时针；与父卡片角度叠加。 */
+/* CAI Chenlin */
+[data-member-id="CAI_Chenlin"] > .sting-member-hover-motto {
+  transform: rotate(-4.5deg);
+}
+
+/* CHEN Zaiyang */
+[data-member-id="CHEN_Zaiyang"] > .sting-member-hover-motto {
+  transform: rotate(3deg);
+}
+
+/* GAO Mandi */
+[data-member-id="GAO_Mandi"] > .sting-member-hover-motto {
+  transform: rotate(2.8deg);
+}
+
+/* GUO Junhong */
+[data-member-id="GUO_Junhong"] > .sting-member-hover-motto {
+  transform: rotate(3deg);
+}
+
+/* LU Yuzhi */
+[data-member-id="LU_Yuzhi"] > .sting-member-hover-motto {
+  transform: rotate(2deg);
+}
+
+/* LI Wenyu */
+[data-member-id="LI_Wenyu"] > .sting-member-hover-motto {
+  transform: rotate(-3.8deg);
+}
+
+/* LIN Zhijun */
+[data-member-id="LIN_Zhijun"] > .sting-member-hover-motto {
+  transform: rotate(3deg);
+}
+
+/* LI Wanxin */
+[data-member-id="LI_Wanxin"] > .sting-member-hover-motto {
+  transform: rotate(-4.5deg);
+}
+
+/* REN Moye */
+[data-member-id="REN_Moye"] > .sting-member-hover-motto {
+  transform: rotate(2.8deg);
+}
+
+/* WANG Kexin */
+[data-member-id="WANG_Kexin"] > .sting-member-hover-motto {
+  transform: rotate(-4deg);
+}
+
+/* WANG Guanzhe */
+[data-member-id="WANG_Guanzhe"] > .sting-member-hover-motto {
+  transform: rotate(2deg);
+}
+
+/* WANG Qingyu */
+[data-member-id="WANG_Qingyu"] > .sting-member-hover-motto {
+  transform: rotate(-4deg);
+}
+
+/* ZHANG Ke */
+[data-member-id="ZHANG_Ke"] > .sting-member-hover-motto {
+  transform: rotate(3deg);
+}
+
+/* ZHANG Jingxuan */
+[data-member-id="ZHANG_Jingxuan"] > .sting-member-hover-motto {
+  transform: rotate(3.5deg);
+}
+
+/* ZHANG Xiwen */
+[data-member-id="ZHANG_Xiwen"] > .sting-member-hover-motto {
+  transform: rotate(3deg);
+}

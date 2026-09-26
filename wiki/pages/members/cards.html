@@ -1,0 +1,12 @@
+{# 数据顺序对应 body1.css 中 members-card-overlay-1 至 15 的坐标。 #}
+{% for member in member_cards %}
+<div class="members-card-overlay-{{ loop.index }}" data-member-id="{{ member.id }}">
+  <img class="members-card-bg{{ loop.index }}"
+       src="{{ asset_url('body/members/' ~ member.paper) }}"
+       alt="Members Card {{ loop.index }}">
+  <img class="{{ member.id }}"
+       src="{{ asset_url('body/members/' ~ member.id ~ '.svg') }}"
+       alt="{{ member.id }}">
+  <div class="{{ member.id }}-text">{{ member.name_lines[0] }}<br>{{ member.name_lines[1] }}</div>
+</div>
+{% endfor %}

@@ -1,74 +1,85 @@
-# Team XMU-China 2026 Wiki
+# XMU-China 2026 Wiki
 
-This repository **MUST** contain all coding assets to generate your team's wiki (HTML, CSS, JavaScript, TypeScript, Python, etc).
+Flask/Jinja wiki for the [iGEM](https://igem.org/) competition, built with [Frozen-Flask](https://frozen-flask.readthedocs.io/) for static export. All pages share a single layout, header, and footer. The **Members** page is implemented at `/members` (also `/team`). The home page and other pages are English placeholders using the shared header and footer. Navigation links open their corresponding pages.
 
-Images, photos, icons and fonts **MUST** be stored on `static.igem.wiki` using [the uploads tool](https://teams.igem.org/go/deliverables/wiki/uploads), and Videos **must** be embedded from [iGEM Video Universe](https://video.igem.org); see [the Video & Audio page](https://teams.igem.org/go/deliverables/wiki/videos-and-audios) for guidance on adding video and audio.
+## Quick start
 
-**Everything your wiki loads (CSS, JavaScript, fonts, images) must be served from iGEM infrastructure.** Do not link to external or third-party CDNs (for example Google Fonts, jsDelivr, cdnjs) — upload the files you need via [the uploads tool](https://teams.igem.org/go/deliverables/wiki/uploads) and reference them from `static.igem.wiki` instead.
+Requires Python 3.12+ and network access (assets load from `static.igem.wiki` via `asset-map.json`).
 
-For up-to-date requirements, resources, help and guidance, visit [teams.igem.org/go/deliverables/wiki](https://teams.igem.org/go/deliverables/wiki).
+Create a virtual environment **outside** the repo (keeps the working tree clean):
 
-> **Using an AI assistant (e.g. Claude Code)?** Please read [.claude/RESPONSIBLE_AI_USE.md](.claude/RESPONSIBLE_AI_USE.md) first. You remain fully responsible for everything you publish: never fabricate scientific results, data, or citations.
-
-## Getting started
-
-You should probably only edit the files inside folders `static`, `wiki` and `wiki > pages`.
-1. Open the Web IDE
-2. Make the changes on the files you wish:
-    * For the menu, change the file [menu.html](wiki/menu.html)
-    * For the layout, change the file [layout.html](wiki/layout.html)
-    * For the pages, change the corresponding file in the foler [pages](wiki/pages)
-3. Review the changes you made
-4. Once you are done, save the changes by **committing** them to the *main branch* of the repository 
-5. An automated script will build, test and deploy your wiki, which should take less than 30 seconds.
-
-## About this Template
-
-### Files
-
-The static assets are in the `static` directory. The layout and templates are in the `wiki` directory, and the pages live in the `wiki > pages` directory. Unless you are an experienced and/or adventurous human, you probably shouldn't change other files.
-
-    |__ static/             -> static assets (CSS and JavaScript files only)
-    |__ wiki/               -> Main directory for the pages and layouts
-        |__ footer.html     -> Footer that will appear in all the pages
-        |__ layout.html     -> Main layout of your wiki. All the pages will follow its structure
-        |__ menu.html       -> Menu that will appear in all the pages
-        |__ pages/          -> Directory for all the pages
-            |__ *.html      -> Actual pages of your wiki
-    |__ .gitignore          -> Tells GitLab which files/directories should not be uploaded to the repository
-    |__ .gitlab-ci.yml      -> Automated flow for building, testing and deploying your website.
-    |__ LICENSE             -> License CC-by-4.0, all wikis are required to have this license - DO NOT MODIFY
-    |__ README.md           -> File containing the text you are reading right now
-    |__ app.py              -> Python code managing your wiki
-    |__ dependencies.txt    -> Software dependencies from the Python code
-
-### Technologies
-
-  * [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/)
-  * [Python](https://www.python.org): Programming language
-  * [Flask](https://palletsprojects.com/projects/flask): Python framework
-  * [Frozen-Flask](https://pypi.org/project/Frozen-Flask): Library that builds the wiki to be deployed as a static website
-  * [Bootstrap](https://getbootstrap.com/docs/5.3/components): CSS and JS components used
-
-### Building locally (advanced users)
-
-To work locally with this project, follow the steps below:
-
-#### Important
-
-Ensure you are using Python `>=3.8` (Python 3.12 recommended) to avoid compatibility issues. You can check your Python version by running `python3 --version` in your terminal.
-
-#### Install
-```bash
-git clone https://gitlab.igem.org/2026/xmu-china.git
-cd xmu-china
-python3 -m venv venv
-. venv/bin/activate # on Linux, MacOS; or
-. venv\Scripts\activate # on Windows
-pip install -r dependencies.txt
+```powershell
+python -m venv ..\26web-local\venv
+..\26web-local\venv\Scripts\python.exe -m pip install -r dependencies.txt
 ```
 
-#### Execute
-```bash
-python app.py
+Run the dev server:
+
+```powershell
+..\26web-local\venv\Scripts\python.exe -B app.py
 ```
+
+Open http://127.0.0.1:8080/members
+
+## Static build
+
+**Local** — output goes to `../26web-local/preview/`:
+
+```powershell
+$env:FLASK_APP = "app.py"
+..\26web-local\venv\Scripts\python.exe -m flask freeze
+```
+
+Preview the build:
+
+```powershell
+..\26web-local\venv\Scripts\python.exe -m http.server 8081 --bind 127.0.0.1 --directory ..\26web-local\preview
+```
+
+**CI** — GitLab CI detects `GITLAB_CI=true` automatically and writes to `public/` for Pages deployment. No extra configuration needed.
+
+## Project layout
+
+| Path | Purpose |
+|---|---|
+| `app.py` | Routes, asset resolution, member data, static build |
+| `asset-map.json` | Local path → iGEM CDN URL mapping (80 assets) |
+| `data/members.json` | Member names and mottos |
+| `wiki/layout.html` | Shared HTML shell |
+| `wiki/menu.html`, `wiki/footer.html` | Shared header and footer |
+| `wiki/pages/` | Simple pages as `<page>.html`; complex pages in subdirectories |
+| `wiki/pages/members/` | Members entry and its hero, map, and card sections |
+| `static/` | CSS and JS served by Flask |
+| `notices/` | Font licenses and attribution |
+
+## Adding a page
+
+Create `wiki/pages/example.html`:
+
+```jinja
+{% extends "layout.html" %}
+{% block title %}Example{% endblock %}
+{% block page_content %}
+<section style="padding: 120px 24px 40px;">Page content here</section>
+{% endblock %}
+```
+
+The generic route serves it at `/example` and the freezer includes it in the build. Override `page_styles` and `page_scripts` blocks as needed — no need to duplicate header or footer markup.
+
+To enable navigation, update `wiki/menu.html`: add `href="{{ url_for('pages', page='example') }}"` and remove `aria-disabled` from the matching link.
+
+## Assets & license
+
+All images and fonts are hosted on iGEM servers. `asset-map.json` keys are lookup paths, not local files. Invalid or missing URLs cause a startup error with the affected keys listed.
+
+Font licenses live in `notices/`. Project code is under [LICENSE](LICENSE); content follows [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+## Page development
+
+Edit `wiki/pages/<page>.html` and replace its under-development message with page content. Every page extends `wiki/layout.html`; shared navigation and footer live in `wiki/menu.html` and `wiki/footer.html`. Placeholder pages use `static/content-page.css`; use the `page_styles` and `page_scripts` blocks for page-specific code. Members content and interactions remain separate in `wiki/pages/members/`. All page templates are included in static builds, including pages not listed in the navigation.
+
+Complex pages may use `wiki/pages/<page>/index.html` with section templates alongside it. Both forms keep the same URL. When converting a simple page, remove its old flat file after migrating the content; flat files take precedence when both exist. Members already uses its directory entry.
+
+## Pending manual cleanup
+
+Keep all 28 simple `.html` files directly inside `wiki/pages/` and keep `wiki/pages/members/`. Delete only the redundant `wiki/pages/members.html`, the old `wiki/members/` directory, and the 28 other subdirectories directly inside `wiki/pages/` (each contains a duplicate `index.html`). No files were deleted automatically.

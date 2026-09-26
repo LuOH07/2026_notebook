@@ -1,0 +1,817 @@
+/* 导师、队长和 PI 的文字图层位置。 */
+.ZHENG_Keshuo1-text-overlay {
+  position: absolute;
+  top: 55.4%;
+  left: 25.5%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.ZHENG_Keshuo2-text-overlay {
+  position: absolute;
+  top: 55.9%;
+  left: 26%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.ZHENG_Keshuo3-text-overlay {
+  position: absolute;
+  top: 56.3%;
+  left: 28.5%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 10px;
+  pointer-events: auto;
+}
+
+.LI_Meihan1-text-overlay {
+  position: absolute;
+  top: 55.4%;
+  left: 46.3%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.LI_Meihan2-text-overlay {
+  position: absolute;
+  top: 55.9%;
+  left: 47.5%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.LI_Meihan3-text-overlay {
+  position: absolute;
+  top: 56.2%;
+  left: 43%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.QU_Jiayue1-text-overlay {
+  position: absolute;
+  top: 55.4%;
+  left: 66.2%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.QU_Jiayue2-text-overlay {
+  position: absolute;
+  top: 55.9%;
+  left: 68.3%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.QU_Jiayue3-text-overlay {
+  position: absolute;
+  top: 56.2%;
+  left: 67.2%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.Ettrium_Han1-text-overlay {
+  position: absolute;
+  top: 64%;
+  left: 21.5%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.Ettrium_Han2-text-overlay {
+  position: absolute;
+  top: 64.5%;
+  left: 20.7%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.Ettrium_Han3-text-overlay {
+  position: absolute;
+  top: 64.8%;
+  left: 19.8%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.CHEN_Yanhao1-text-overlay {
+  position: absolute;
+  top: 64%;
+  left: 43.5%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.CHEN_Yanhao2-text-overlay {
+  position: absolute;
+  top: 64.5%;
+  left: 43.5%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.CHEN_Yanhao3-text-overlay {
+  position: absolute;
+  top: 64.8%;
+  left: 48%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.LIAO_Yijie1-text-overlay {
+  position: absolute;
+  top: 64%;
+  left: 67.8%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.LIAO_Yijie2-text-overlay {
+  position: absolute;
+  top: 64.5%;
+  left: 65%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.LIAO_Yijie3-text-overlay {
+  position: absolute;
+  top: 64.8%;
+  left: 69.5%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.PENG_Jiaxuan1-text-overlay {
+  position: absolute;
+  top: 69.1%;
+  left: 20.9%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.PENG_Jiaxuan2-text-overlay {
+  position: absolute;
+  top: 69.6%;
+  left: 22%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.PENG_Jiaxuan3-text-overlay {
+  position: absolute;
+  top: 69.9%;
+  left: 21.5%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.SHEN_Ruichen1-text-overlay {
+  position: absolute;
+  top: 69.1%;
+  left: 44.3%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.SHEN_Ruichen2-text-overlay {
+  position: absolute;
+  top: 69.6%;
+  left: 48.1%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.SHEN_Ruichen3-text-overlay {
+  position: absolute;
+  top: 69.9%;
+  left: 45.8%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.LIN_Nanqin1-text-overlay {
+  position: absolute;
+  top: 69.1%;
+  left: 68%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.LIN_Nanqin2-text-overlay {
+  position: absolute;
+  top: 69.6%;
+  left: 64.5%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.LIN_Nanqin3-text-overlay {
+  position: absolute;
+  top: 69.9%;
+  left: 66.5%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.Enduo_Kim1-text-overlay {
+  position: absolute;
+  top: 74.2%;
+  left: 22.9%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.Enduo_Kim2-text-overlay {
+  position: absolute;
+  top: 74.7%;
+  left: 22.8%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.Enduo_Kim3-text-overlay {
+  position: absolute;
+  top: 75%;
+  left: 20.8%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.GUO_Yanlinxing1-text-overlay {
+  position: absolute;
+  top: 74.2%;
+  left: 43.7%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.GUO_Yanlinxing2-text-overlay {
+  position: absolute;
+  top: 74.7%;
+  left: 41%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.GUO_Yanlinxing3-text-overlay {
+  position: absolute;
+  top: 75%;
+  left: 44.3%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.TANG_Ziyan1-text-overlay {
+  position: absolute;
+  top: 74.2%;
+  left: 67.2%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.TANG_Ziyan2-text-overlay {
+  position: absolute;
+  top: 74.7%;
+  left: 67.7%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.TANG_Ziyan3-text-overlay {
+  position: absolute;
+  top: 75%;
+  left: 65%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.YANG_Nan1-text-overlay {
+  position: absolute;
+  top: 83.2%;
+  left: 47%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.YANG_Nan2-text-overlay {
+  position: absolute;
+  top: 83.7%;
+  left: 41%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 13px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.YANG_Nan3-text-overlay {
+  position: absolute;
+  top: 84%;
+  left: 45.3%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.CHEN_Junhong1-text-overlay {
+  position: absolute;
+  top: 96.9%;
+  left: 43.3%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.CHEN_Junhong2-text-overlay {
+  position: absolute;
+  top: 97.3%;
+  left: 42.5%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+  pointer-events: auto;
+}
+
+.CHEN_Junhong3-text-overlay {
+  position: absolute;
+  top: 97.8%;
+  left: 41.6%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.HUANG_Jiacheng1-text-overlay {
+  position: absolute;
+  top: 96.9%;
+  left: 64.5%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.HUANG_Jiacheng2-text-overlay {
+  position: absolute;
+  top: 97.3%;
+  left: 68%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+  pointer-events: auto;
+}
+
+.HUANG_Jiacheng3-text-overlay {
+  position: absolute;
+  top: 97.8%;
+  left: 66.7%;
+  z-index: 5;
+  color: #5B6873;
+  text-align: center;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  pointer-events: auto;
+}
+
+.LING_Chen1-text-overlay {
+  position: absolute;
+  top: 96.9%;
+  left: 23.2%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.LING_Chen2-text-overlay {
+  position: absolute;
+  top: 97.3%;
+  left: 24%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.HONG_Wenjing1-text-overlay {
+  position: absolute;
+  top: 91.8%;
+  left: 31.4%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.HONG_Wenjing2-text-overlay {
+  position: absolute;
+  top: 92.3%;
+  left: 34.5%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.ZHANG_Aihui1-text-overlay {
+  position: absolute;
+  top: 91.8%;
+  left: 55%;
+  z-index: 5;
+  color: #354453;
+  text-align: center;
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.364px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.ZHANG_Aihui2-text-overlay {
+  position: absolute;
+  top: 92.3%;
+  left: 57.5%;
+  z-index: 5;
+  color: #1CA28E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+  pointer-events: auto;
+  white-space: nowrap;
+}

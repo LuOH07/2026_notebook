@@ -1,81 +1,74 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
+<header class="site-header">
+        <img src="{{ asset_url('head_foot/STING_logo_Blue.png') }}" alt="STING Logo" class="logo">
+        <nav>
+            <!-- 1. HOME -->
+            <div class="nav-item">
+                <a href="{{ url_for('home') }}" class="nav-link"{% if request.endpoint == "home" %} aria-current="page"{% endif %}>HOME</a>
+            </div>
+            
+            <!-- 2. TEAM -->
+            <div class="nav-item">
+                <a href="#" class="nav-link">TEAM</a>
+                <div class="dropdown-menu">
+                    <a href="{{ url_for('pages', page='members') }}" class="dropdown-item"{% if request.endpoint == "team" or (request.endpoint == "pages" and request.view_args.get("page") == "members") %} aria-current="page"{% endif %}>Members</a>
+                    <a href="{{ url_for('pages', page='attributions') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "attributions" %} aria-current="page"{% endif %}>Attributions</a>
+                    <a href="{{ url_for('pages', page='notebook') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "notebook" %} aria-current="page"{% endif %}>Notebook</a>
+                    <a href="{{ url_for('pages', page='experiments') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "experiments" %} aria-current="page"{% endif %}>Experiments</a>
+                    <a href="{{ url_for('pages', page='safety-and-security') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "safety-and-security" %} aria-current="page"{% endif %}>Safety</a>
+                    <a href="{{ url_for('pages', page='collaborations') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "collaborations" %} aria-current="page"{% endif %}>Collaborations</a>
+                </div>
+            </div>
 
-    <!-- TEAM NAME -->
-    <a class="navbar-brand" href="#">XMU-China</a>
+            <!-- 3. PROJECT -->
+            <div class="nav-item">
+                <a href="#" class="nav-link">PROJECT</a>
+                <div class="dropdown-menu">
+                    <a href="{{ url_for('pages', page='description') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "description" %} aria-current="page"{% endif %}>Description</a>
+                    <a href="{{ url_for('pages', page='design') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "design" %} aria-current="page"{% endif %}>Design</a>
+                    <a href="{{ url_for('pages', page='engineering') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "engineering" %} aria-current="page"{% endif %}>Engineering<br>Success</a>
+                    <a href="{{ url_for('pages', page='results') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "results" %} aria-current="page"{% endif %}>Results</a>
+                    <a href="{{ url_for('pages', page='proof-of-concept') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "proof-of-concept" %} aria-current="page"{% endif %}>Proof of<br>Concept</a>
+                    <a href="{{ url_for('pages', page='proposed-implementation') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "proposed-implementation" %} aria-current="page"{% endif %}>Proposed<br>Implementation</a>
+                </div>
+            </div>
 
-    <!-- SMALL SCREEN MENU ICON -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+            <!-- 4. DRYLAB -->
+            <div class="nav-item">
+                <a href="#" class="nav-link">DRYLAB</a>
+                <div class="dropdown-menu">
+                    <a href="{{ url_for('pages', page='model') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "model" %} aria-current="page"{% endif %}>Model</a>
+                    <a href="{{ url_for('pages', page='sop') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "sop" %} aria-current="page"{% endif %}>SOP</a>
+                    <a href="{{ url_for('pages', page='lca') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "lca" %} aria-current="page"{% endif %}>LCA</a>
+                </div>
+            </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto left-aligned">
+            <!-- 5. PARTS -->
+            <div class="nav-item">
+                <a href="#" class="nav-link">PARTS</a>
+                <div class="dropdown-menu">
+                    <a href="{{ url_for('pages', page='parts') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "parts" %} aria-current="page"{% endif %}>Parts</a>
+                    <a href="{{ url_for('pages', page='contribution') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "contribution" %} aria-current="page"{% endif %}>Contribution</a>
+                    <a href="{{ url_for('pages', page='parts-collection') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "parts-collection" %} aria-current="page"{% endif %}>Parts<br>Collection</a>
+                </div>
+            </div>
 
-        <!-- HOME -->
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('home') }}">Home</a>
-        </li>
+            <!-- 6. HP -->
+            <div class="nav-item">
+                <a href="#" class="nav-link">HP</a>
+                <div class="dropdown-menu">
+                    <a href="{{ url_for('pages', page='human-practices') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "human-practices" %} aria-current="page"{% endif %}>Human<br>Practices</a>
+                    <a href="{{ url_for('pages', page='integrated-human-practices') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "integrated-human-practices" %} aria-current="page"{% endif %}>Integrated<br>Human Practices</a>
+                </div>
+            </div>
 
-        <!-- TEAM -->
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('pages', page='team') }}">Team</a>
-        </li>
-
-        <!-- PROJECT -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbar-project" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Project
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbar-project">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
-          </ul>
-        </li>
-
-        <!-- WET LAB -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbar-wet-lab" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Wet Lab
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbar-wet-lab">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='measurement') }}">Measurement</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='alternative-platform') }}">Alternative Platform</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='safety-and-security') }}">Safety and Security</a></li>
-          </ul>
-        </li>
-
-        <!-- DRY LAB -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbar-dry-lab" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dry Lab
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbar-dry-lab">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
-          </ul>
-        </li>
-
-        <!-- ENGAGEMENT -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbar-engagement" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Engagement
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbar-engagement">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainability') }}">Sustainability</a></li>
-          </ul>
-        </li>
-
-      </ul>
-    </div>
-  </div>
-</nav>
+            <!-- 7. AWARD -->
+            <div class="nav-item">
+                <a href="#" class="nav-link">AWARD</a>
+                <div class="dropdown-menu">
+                    <a href="{{ url_for('pages', page='integrated-human-practices') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "integrated-human-practices" %} aria-current="page"{% endif %}>Integrated<br>Human Practices</a>
+                    <a href="{{ url_for('pages', page='model') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "model" %} aria-current="page"{% endif %}>Model</a>
+                    <a href="{{ url_for('pages', page='parts-collection') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "parts-collection" %} aria-current="page"{% endif %}>Parts<br>Collection</a>
+                </div>
+            </div>
+        </nav>
+    </header>
