@@ -106,8 +106,6 @@ def team():
 def pages(page):
     page = page.lower()
     template = page_templates().get(page)
-    if template is None:
-        abort(404)
     return render_template(template)
 
 
