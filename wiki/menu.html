@@ -14,8 +14,8 @@
                     <a href="{{ url_for('pages', page='attributions') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "attributions" %} aria-current="page"{% endif %}>Attributions</a>
                     <a href="{{ url_for('pages', page='notebook') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "notebook" %} aria-current="page"{% endif %}>Notebook</a>
                     <a href="{{ url_for('pages', page='experiments') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "experiments" %} aria-current="page"{% endif %}>Experiments</a>
-                    <a href="{{ url_for('pages', page='safety') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "safety" %} aria-current="page"{% endif %}>Safety</a>
-                    <a href="{{ url_for('pages', page='collaboration') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "collaboration" %} aria-current="page"{% endif %}>Collaborations</a>
+                    <a href="{{ url_for('pages', page='safety-and-security') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "safety-and-security" %} aria-current="page"{% endif %}>Safety</a>
+                    <a href="{{ url_for('pages', page='collaborations') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "collaborations" %} aria-current="page"{% endif %}>Collaborations</a>
                 </div>
             </div>
 

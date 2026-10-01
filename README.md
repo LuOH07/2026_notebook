@@ -36,7 +36,11 @@ Preview the build:
 ..\26web-local\venv\Scripts\python.exe -m http.server 8081 --bind 127.0.0.1 --directory ..\26web-local\preview
 ```
 
-**CI** — GitLab CI detects `GITLAB_CI=true` automatically and writes to `public/` for Pages deployment. No extra configuration needed.
+**GitLab Pages** — The root `.gitlab-ci.yml` uses Python 3.12, installs the pinned dependencies, runs `FLASK_APP=app.py flask freeze`, and publishes `public/` as the Pages artifact. It follows the working XMU-China GitLab project configuration and runs only on the repository''s default branch. GitLab sets `GITLAB_CI=true` automatically, so the build output stays inside the repository.
+
+Commit `.gitlab-ci.yml` together with the source files and push to the GitLab repository''s default branch to trigger deployment. The existing `.github/workflows/deploy.yml` is used only by GitHub Actions.
+
+Page URLs match the working GitLab project and have no trailing slash (for example, `/members` and `/description`); the static export produces a corresponding extensionless `<page>` file. Relative links allow navigation and local CSS/JS to work when the site is served below a project path.
 
 ## Project layout
 
