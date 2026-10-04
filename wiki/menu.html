@@ -46,7 +46,7 @@
                 <div class="dropdown-menu">
                     <a href="{{ url_for('pages', page='parts') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "parts" %} aria-current="page"{% endif %}>Parts</a>
                     <a href="{{ url_for('pages', page='contribution') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "contribution" %} aria-current="page"{% endif %}>Contribution</a>
-                    <a href="{{ url_for('pages', page='parts-collection') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "parts-collection" %} aria-current="page"{% endif %}>Parts<br>Collection</a>
+                    <a href="{{ url_for('pages', page='part-collection') }}" class="dropdown-item"{% if request.endpoint == "pages" and request.view_args.get("page") == "part-collection" %} aria-current="page"{% endif %}>Part<br>Collection</a>
                 </div>
             </div>
 
