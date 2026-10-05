@@ -6,3 +6,10 @@ __pycache__/
 
 # GitLab CI output; local preview is generated outside this repository.
 /public/
+
+# Additional ignores from the working GitLab project.
+env
+.vscode
+.idea
+.DS_Store
+node_modules
