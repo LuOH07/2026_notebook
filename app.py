@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 from urllib.parse import urlparse
 
-from flask import Flask, Response, abort, render_template
+from flask import Flask, Response, abort, render_template, url_for
 from flask_frozen import Freezer
 
 
@@ -27,6 +27,8 @@ def validate_asset_urls():
     """本地预览与正式构建统一使用 iGEM 线上素材。"""
     invalid_paths = []
     for local_path, remote_url in ASSET_URLS.items():
+        if local_path.startswith("notebook/") and remote_url == "":
+            continue
         parsed_url = urlparse(remote_url) if isinstance(remote_url, str) else None
         if (
             parsed_url is None
@@ -63,7 +65,10 @@ freezer = Freezer(app)
 
 # 模板工具：所有图片与字体共用这一套地址解析规则。
 def asset_url(local_path):
-    return ASSET_URLS[local_path]
+    remote_url = ASSET_URLS[local_path]
+    if local_path.startswith("notebook/") and remote_url == "":
+        return url_for("static", filename=local_path)
+    return remote_url
 
 
 def asset_config():
@@ -71,10 +76,15 @@ def asset_config():
     return {path: asset_url(path) for path in ASSET_URLS}
 
 
+NOTEBOOK_ENTRIES = json.loads(
+    (PROJECT_ROOT / "data" / "notebook.json").read_text(encoding="utf-8")
+)
+
 app.jinja_env.globals.update(
     asset_url=asset_url,
     asset_config=asset_config,
     member_cards=MEMBER_CARDS,
+    notebook_entries=NOTEBOOK_ENTRIES,
     member_mottos={member["id"]: member["motto"] for member in MEMBER_CARDS},
 )
 

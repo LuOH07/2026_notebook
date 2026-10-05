@@ -1,78 +1,59 @@
 {% extends "layout.html" %}
-
-{% block title %}Description{% endblock %}
-
+{% block title %}Notebook{% endblock %}
 {% block page_styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='description/description.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='notebook/notebook.css') }}">
 {% endblock %}
-
 {% block page_content %}
-<header class="title-header-wrapper" id="heroWrapper">
-    <div class="grid-container" id="heroGridContainer">
-        <canvas id="gridCanvas"></canvas>
-        
-        <!-- 左侧装饰 DNA (通过 asset-map.json 解析) -->
-        <div class="left-dna-wrapper">
-            <img src="{{ asset_url('title/DNA_1.png') }}" alt="DNA Structure Left" class="left-dna-image">
-        </div>
-
-        <!-- 右侧装饰蛋白结构 -->
-        <div class="right-protein-wrapper">
-            <img src="{{ asset_url('title/protein.png') }}" alt="Protein Structure Right" class="right-protein-image">
-        </div>
-
-        <!-- 右下装饰 DNA -->
-        <div class="bottom-right-dna-wrapper">
-            <img src="{{ asset_url('title/DNA_2.png') }}" alt="DNA Structure Bottom Right" class="bottom-right-dna-image">
-        </div>
-
-        <!-- 中央大标题图片 -->
-        <div class="center-image-wrapper">
-            <img src="https://static.igem.wiki/teams/6059/wiki/title/notebook.avif" alt="Description" class="title-image">
-        </div>
-
-        <!-- 中央引言文案 -->
-        <div class="center-description-wrapper">
-            <p class="center-description-text">
-                We are an international team of students, researchers,<br>
-                and innovators exploring the frontiers of bacterial<br>
-                genome engineering through the power of STING.
-            </p>
-        </div>
-
-        <!-- 底部滑动探索指引 -->
-        <div class="scroll-explore-wrapper">
-            <span class="scroll-line"></span>
-            <span class="scroll-text">SCROLL TO EXPLORE</span>
-            <span class="scroll-line"></span>
-        </div>
-
-        <div class="bottom-dots-decor"></div>
+{# Edit the records here. Keep ISO dates and provide verified experiment text only. #}
+{% set entries = [
+  {'date': '2026-04-10', 'label': '4.10'},
+  {'date': '2026-04-20', 'label': '4.20'},
+  {'date': '2026-05-01', 'label': '5.1'},
+  {'date': '2026-05-03', 'label': '5.3'},
+  {'date': '2026-05-04', 'label': '5.4'},
+  {'date': '2026-05-07', 'label': '5.7'},
+  {'date': '2026-05-10', 'label': '5.10'}
+] %}
+<section class="notebook" aria-labelledby="notebook-title">
+  <div class="notebook-intro">
+    <h1 id="notebook-title">Notebook <span>Lab records</span></h1>
+    <p>Select a date to explore our laboratory notebook.</p>
+  </div>
+  <div class="notebook-layout">
+    <aside class="notebook-timeline" aria-label="Record dates">
+      <ol>
+        {% for entry in entries %}
+        <li><button type="button" class="notebook-date" data-entry="{{ loop.index0 }}" aria-controls="notebook-entry-{{ loop.index }}" {% if loop.first %}aria-current="date"{% endif %}>
+          <span class="notebook-sword" aria-hidden="true"><img src="{{ url_for('static', filename='notebook/sword.svg') }}" alt="" width="90" height="135"></span>
+          <time datetime="{{ entry.date }}">{{ entry.label }}</time>
+        </button></li>
+        {% endfor %}
+      </ol>
+    </aside>
+    <div class="notebook-reader" tabindex="0" role="region" aria-label="Notebook pages. Use left and right arrow keys to change pages.">
+      <div class="notebook-stage">
+        {% for entry in entries %}
+        <article id="notebook-entry-{{ loop.index }}" class="notebook-sheet" data-sheet="{{ loop.index0 }}" data-position="{{ [3, loop.index0] | min }}" style="--paper-image: url('{{ url_for('static', filename='notebook/notebook.svg') }}')" {% if not loop.first %}aria-hidden="true" inert{% endif %}>
+          <h2><time datetime="{{ entry.date }}">{{ entry.date | replace('-', ' / ') }}</time></h2>
+          <div class="notebook-writing" tabindex="0" aria-label="Record text">
+            <h3>{{ entry.title | default('Record pending') }}</h3>
+            {% for paragraph in entry.paragraphs | default(['The verified laboratory record for this date will be added here.']) %}<p>{{ paragraph }}</p>{% endfor %}
+          </div>
+          <figure class="notebook-illustration">
+            {% if entry.illustration_url | default('') %}<img src="{{ entry.illustration_url }}" alt="{{ entry.illustration_alt | default('Laboratory illustration') }}" loading="lazy">
+            {% else %}<p>Illustration pending</p>{% endif %}
+          </figure>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="notebook-dots" role="group" aria-label="Choose a notebook page">
+        {% for entry in entries %}<button type="button" data-entry="{{ loop.index0 }}" aria-controls="notebook-entry-{{ loop.index }}" aria-label="Page {{ loop.index }}, {{ entry.date }}" aria-pressed="{{ 'true' if loop.first else 'false' }}"></button>{% endfor %}
+      </div>
+      <p class="notebook-status" role="status" aria-live="polite" aria-atomic="true">Page 1 of {{ entries | length }}</p>
     </div>
-</header>
-
-<!-- 侧边动态目录导航栏 (TOC) -->
-<aside class="side-container" id="sideContainer">
-    <nav class="toc-nav" id="tocNav" aria-label="Table of Contents"></nav>
-</aside>
-
-<!-- 正文主体容器 -->
-<main class="main-container" id="mainContainer">
-    <h1 class="heading-1">Heading 1</h1>
-    <p class="body-text"><b>TnpB</b> CRISPR-Cas9/Cas12.</p>
-
-    <img src="https://static.igem.wiki/teams/6059/wiki/description/figure/1.avif" alt="1" class="figure-image">
-    <p class="figure-caption"><b>Figure</b><b>  1</b>  Comparison of protein sizes among Cas9, TnpB, and Cas12a</p>    
-    <h2 class="heading-2">Heading 2</h2>   
-    <h3 class="heading-3">Heading 3</h3>
-    <h1 class="heading-reference">Reference</h1>
-</main>
-
-<img src="https://static.igem.wiki/teams/6059/wiki/description/sword.avif" alt="Sword Scroll Track" class="scroll-sword" id="scrollSword">
-<img src="https://static.igem.wiki/teams/6059/wiki/description/scabbard.avif" alt="Scabbard Scroll Thumb" class="scroll-scabbard" id="scrollScabbard">
-<div class="scroll-back-to-top" id="scrollBackToTop">BACK TO TOP</div>
+  </div>
+</section>
 {% endblock %}
-
 {% block page_scripts %}
-<script src="{{ url_for('static', filename='description/description.js') }}" defer></script>
+<script src="{{ url_for('static', filename='notebook/notebook.js') }}" defer></script>
 {% endblock %}
