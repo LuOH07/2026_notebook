@@ -1,0 +1,68 @@
+name: Deploy wiki to GitHub Pages
+
+# GitHub equivalent of .gitlab-ci.yml: build the Flask/Frozen-Flask wiki and
+# publish the frozen output (public/) with GitHub Pages.
+#
+# One-time setup: repository Settings -> Pages -> Build and deployment ->
+# Source: "GitHub Actions" (instead of "Deploy from a branch"). While the
+# source is still a branch, GitHub runs its own Jekyll build and the deploy
+# step of this workflow will fail because Pages is not configured for Actions.
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never run two Pages deployments at once; let a running one finish.
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pinned dependencies
+        run: python -m pip install --no-cache-dir -r dependencies.txt
+
+      - name: Freeze the site to public/
+        # app.py only writes to public/ when the publish switch is on; GitLab
+        # sets GITLAB_CI itself, so it is set explicitly here. The asset map is
+        # validated against static.igem.wiki during the build.
+        env:
+          FLASK_APP: app.py
+          GITLAB_CI: "true"
+        run: python -m flask freeze
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload the frozen site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,40 @@
+# This repository is NOT a Jekyll site. It is a Flask + Frozen-Flask project
+# (see app.py, dependencies.txt and .gitlab-ci.yml) whose static output is
+# generated into public/ and published by .github/workflows/deploy.yml.
+#
+# This file exists so that GitHub's built-in Jekyll build ("pages-build-
+# deployment", used when Settings -> Pages -> Source is "Deploy from a branch")
+# no longer fails on the Markdown sources of the project.
+#
+# Why it failed before:
+#   GitHub Pages enables the plugin jekyll-optional-front-matter, which turns
+#   every Markdown file into a Jekyll page and renders it through Liquid.
+#   README.md documents a Jinja template example containing
+#     {% extends "layout.html" %}
+#   and Liquid has no "extends" tag, so the whole build aborted with
+#     Liquid syntax error (line 64): Unknown tag 'extends'
+#   No page content is changed here; the offending sources are simply kept out
+#   of the Jekyll pipeline, which cannot publish this project correctly anyway.
+
+exclude:
+  # Jekyll's own default excludes, repeated because setting "exclude" replaces
+  # the default list.
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  # Markdown sources (never part of the published wiki).
+  - README.md
+  - notices/notebook-editing.md
+  - .claude/
+  # Flask/Frozen-Flask sources and build inputs.
+  - app.py
+  - asset-map.json
+  - dependencies.txt
+  - .gitlab-ci.yml
+  - data/
+  - wiki/
+  - static/
