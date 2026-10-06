@@ -48,6 +48,27 @@ jobs:
           GITLAB_CI: "true"
         run: python -m flask freeze
 
+      - name: Give the pages a .html extension
+        # GitHub Pages derives Content-Type from the file extension: the
+        # extensionless files Frozen-Flask writes for /members, /notebook, ...
+        # were served as application/octet-stream, so the browser downloaded
+        # them instead of rendering them (GitLab Pages serves them as HTML,
+        # which is why the same build works there).
+        #
+        # GitHub Pages resolves the URL /members to the file members.html and
+        # returns text/html, so renaming the frozen page files is enough — the
+        # relative links inside the pages, the URLs and every page's content
+        # stay exactly the same. Only the top level holds page files; static/
+        # already uses real extensions.
+        run: |
+          set -euo pipefail
+          find public -maxdepth 1 -type f ! -name '*.*' -print0 |
+            while IFS= read -r -d '' file; do
+              mv "$file" "$file.html"
+            done
+          echo "Extensionless files left in public/: $(find public -maxdepth 1 -type f ! -name '*.*' | wc -l)"
+          ls public
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
