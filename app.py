@@ -107,12 +107,12 @@ def home():
     return render_template("pages/home.html")
 
 
-@app.route("/team")
+@app.route("/team/")
 def team():
     return render_template("pages/members/index.html")
 
 
-@app.route("/<page>")
+@app.route("/<page>/")
 def pages(page):
     page = page.lower()
     template = page_templates().get(page)
@@ -121,7 +121,7 @@ def pages(page):
     return render_template(template)
 
 
-@app.route("/fonts.css")
+@app.route("/fonts.css/")
 def fonts_css():
     return Response(render_template("fonts.css"), mimetype="text/css")
 
